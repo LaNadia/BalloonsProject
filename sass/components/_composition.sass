@@ -1,0 +1,24 @@
+.composition
+    position: relative
+    &__photo
+        width: 55%
+        border-radius: .5rem
+        box-shadow: $box-shadow
+        position: absolute
+        transition: all .1s
+        outline-offset: 1rem
+        &_1
+            top: 0
+            left: 0
+        &_2
+            top: 4rem
+            right: 0
+        &_3
+            top: 13rem
+            left: 9rem
+        &:hover
+            transform: scale(1.1)
+            z-index: 20
+            outline: .7rem solid $color-brown-light // не border, тк можно родителю задать отступ outline-offset
+    &:hover &__photo:not(:hover)
+        transform: scale(.95)
