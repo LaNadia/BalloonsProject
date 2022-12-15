@@ -14,6 +14,10 @@
   margin-bottom: 8rem;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 @keyframes leftToRight {
   0% {
     opacity: 0;
@@ -116,6 +120,9 @@ body {
 }
 .title-second:hover {
   text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+.title-second_white {
+  color: white;
 }
 
 .title-third {
@@ -226,8 +233,177 @@ body {
   transform: scale(0.95);
 }
 
+.adventure-card {
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.2s;
+}
+.adventure-card:hover {
+  transform: translateY(-1.5rem);
+}
+.adventure-card__icon {
+  display: inline-block;
+  font-size: 6.4rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card-tour {
+  height: 52rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+.card-tour__side {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  height: 52rem;
+  transition: all 0.7s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+  opacity: 0.99;
+}
+.card-tour__side_back {
+  transform: rotateY(180deg);
+  background: linear-gradient(120deg, #BA8554, #A14F03);
+}
+.card-tour:hover .card-tour__side_front {
+  transform: rotateY(-180deg);
+}
+.card-tour:hover .card-tour__side_back {
+  transform: rotateY(0deg);
+}
+.card-tour__img {
+  background-blend-mode: hard-light;
+  height: 21rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+.card-tour__img_1 {
+  background: #BA8554 url("../img/photos/tour-1.jpg") center/cover no-repeat;
+}
+.card-tour__img_2 {
+  background: #BA8554 url("../img/photos/tour-2.jpg") center/cover no-repeat;
+}
+.card-tour__img_3 {
+  background: #BA8554 url("../img/photos/tour-3.png") center/cover no-repeat;
+}
+.card-tour__title {
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: right;
+  position: absolute;
+  top: 17rem;
+  right: 0rem;
+  color: white;
+}
+.card-tour__span {
+  background: linear-gradient(90deg, #BA8554, #A14F03);
+  padding: 1rem 2rem 0.3rem 2rem;
+}
+.card-tour__span_2 {
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
+  padding-bottom: 1rem;
+  padding-top: 0;
+}
+.card-tour__description ul {
+  list-style: none;
+  margin: 0 auto;
+  width: 75%;
+}
+.card-tour__description ul li {
+  font-size: 1.6rem;
+  color: #777777;
+  letter-spacing: 0.2rem;
+  line-height: 1.4rem;
+  text-decoration-line: underline;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.card-tour__backside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.card-tour_text {
+  margin-bottom: 8rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.card-tour_text_1 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.card-tour_text_2 {
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+.feedback-card {
+  width: 75%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 6rem;
+  transform: skewX(330deg);
+}
+.feedback-card > * {
+  transform: skewX(-330deg);
+}
+.feedback-card__img {
+  width: 15rem;
+  height: 15rem;
+  background: green;
+  float: left;
+  border-radius: 100rem;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  margin-right: 4rem;
+  overflow: hidden;
+}
+.feedback-card__img img {
+  height: 100%;
+}
+
+.feedback-card__box {
+  color: #777777;
+}
+
 .section-about {
   padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.section-adventure {
+  padding: 21rem 0;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../img/section-adventure.jpg") center/cover no-repeat;
+  transform: skewY(7deg);
+}
+.section-adventure > * {
+  transform: skewY(-7deg);
+}
+
+.section-tour {
+  padding-top: 15rem;
+}
+
+.section_feedback {
+  padding-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .header {
