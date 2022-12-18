@@ -27,7 +27,7 @@
     width: calc(3 * ((100% - 3 * #{$gutter-horisontal})) / 4 + 2 * #{$gutter-horisontal})
 
 
-[class^='col-'] // селектор класса по началу названия класса. знак $ для конца. * для поиска везде в названии
+[class^='col-'] // ^ селектор класса по началу названия класса. знак $ для конца. * для поиска везде в названии
     &:not(:last-child)
         margin-right: $gutter-horisontal
     float: left

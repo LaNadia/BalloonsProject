@@ -5,6 +5,9 @@
     margin: 0 auto
     padding: 6rem
     transform: skewX(330deg)
+    position: relative
+    &:not(:last-child)
+        margin-bottom: 8rem
     & > *
        transform: skewX(-330deg) 
     &__img
@@ -19,6 +22,25 @@
         overflow: hidden
         img
             height: 100%
+            transform: scale(1.2)
+            transition: all .5s
+    &__name
+        text-align: center
+        font-size: 2rem
+        letter-spacing: .2rem
+        font-weight: 400
+        color: $color-white
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0
+        transition: all .5s
+    &:hover &__name
+        opacity: 1
+    &:hover img
+        transform: scale(1)
+        filter: blur(.3rem) brightness(80%)
 
 .feedback-card__box
     color: $color-grey

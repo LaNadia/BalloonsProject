@@ -25,36 +25,32 @@
         <main>
             <section class="section-about">
                 <h2 class="title-second margin-bottom-80px">Невероятное ощущение свободы</h2>
-            </section>
+                <div class="row">
+                    <div class="col-1-of-2">
+                        <h3 class="title-third margin-bottom-10px">позвольте себе приключение</h3>
+                        <p class="paragraph margin-bottom-30px">
+                            Задача организации, в особенности же дальнейшее развитие различных форм
+                            деятельности влечет за собой процесс внедрениям и модернизации соответствующий
+                            условий активизации.Таким образом начало повседневной работы по формированию позиции влечет.
+                        </p>
+                        <h3 class="title-third margin-bottom-10px">ВВЕРХ НА 6000 МЕТРОВ НАД УРОВНЕМ МОРЯ</h3>
+                        <p class="paragraph margin-bottom-30px">
+                            Задача организации, в особенности же дальнейшее развитие различных форм
+                            деятельности влечет за собой процесс внедрения и модернизации соответствующий
+                            условий активизации. Таким образом начало повседневной работы по формированию позиции влечет.
+                        </p>
 
-            <div class="row">
-                <div class="col-1-of-2">
-                    <h3 class="title-third margin-bottom-10px">позвольте себе приключение</h3>
-                    <p class="paragraph margin-bottom-30px">
-                        Задача организации, в особенности же дальнейшее развитие различных форм
-                        деятельности влечет за собой процесс внедрениям и модернизации соответствующий
-                        условий активизации.Таким образом начало повседневной работы по формированию позиции влечет.
-                    </p>
-                    <h3 class="title-third margin-bottom-10px">ВВЕРХ НА 6000 МЕТРОВ НАД УРОВНЕМ МОРЯ</h3>
-                    <p class="paragraph margin-bottom-30px">
-                        Задача организации, в особенности же дальнейшее развитие различных форм
-                        деятельности влечет за собой процесс внедрения и модернизации соответствующий
-                        условий активизации. Таким образом начало повседневной работы по формированию позиции влечет.
-                    </p>
-
-                    <a href="#" class="btn-text margin-bottom-80px">Узнать больше &rarr;</a>
-                </div>
-
-
-                <div class="col-1-of-2">
-                    <div class="composition">
-                        <img src="img/photos/photo-1.png" alt="ballons 1" class="composition__photo composition__photo_1">
-                        <img src="img/photos/photo-2.png" alt="ballons 2" class="composition__photo composition__photo_2">
-                        <img src="img/photos/photo-3.png" alt="ballons 3" class="composition__photo composition__photo_3">
+                        <a href="#" class="btn-text margin-bottom-80px">Узнать больше &rarr;</a>
+                    </div>
+                    <div class="col-1-of-2">
+                        <div class="composition">
+                            <img src="img/photos/photo-1.png" alt="ballons 1" class="composition__photo composition__photo_1">
+                            <img src="img/photos/photo-2.png" alt="ballons 2" class="composition__photo composition__photo_2">
+                            <img src="img/photos/photo-3.png" alt="ballons 3" class="composition__photo composition__photo_3">
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <section class="section-adventure">
                 <div class="row">
                     <div class="col-1-of-4">
@@ -95,7 +91,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="section-tour">
                 <h2 class="title-second margin-bottom-80px">Наиболее популярные туры</h2>
                 <div class="row">
@@ -185,13 +180,19 @@
                     <a href="#" class="btn">забронировать</a>
                 </div>
             </section>
-
             <section class="section-feedback">
+                <div class="bg-gradient">
+                    <video class="bg-video" autoplay muted loop>
+                        <source src="img/video/balloons-mp4.mp4">
+                        <source src="img/video/balloons-webm.webm">
+                    </video>
+                </div>
                 <h2 class="title-second title-second_white margin-bottom-80px">Отзывы наших клиентов</h2>
                 <div class="row">
                     <div class="feedback-card">
                         <figure class="feedback-card__img">
                             <img src="img/photos/feedback-1.jpg" alt="person 1">
+                            <figcaption class="feedback-card__name">Антон Рябин</figcaption>
                         </figure>
                         <div class="feedback-card__box">
                             <h3 class="title-third margin-bottom-10px">я получил массу впечатлений</h3>
@@ -207,7 +208,8 @@
                     </div>
                     <div class="feedback-card">
                         <figure class="feedback-card__img">
-                            <img src="img/photos/feedback-2.jpg" alt="">
+                            <img src="img/photos/feedback-2.jpg" alt="person2">
+                            <figcaption class="feedback-card__name">Лиза Фролова</figcaption>
                         </figure>
                         <div class="feedback-card__box">
                             <h3 class="title-third margin-bottom-10px">я получил массу впечатлений</h3>
@@ -222,12 +224,63 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-align-center">
+                    <a href="#" class="btn">забронировать</a>
+                </div>
             </section>
-
-
-
-
+            <section class="section-book">
+                <div class="row">
+                    <div class="book">
+                        <div class="book__form">
+                            <form action="#" class="form">
+                                <h2 class="title-second margin-bottom-30px">Забронировать тур</h2>
+                                <div class="form-group">
+                                    <input type="text" class="form__input" placeholder = "Имя, фамилия" id="name" required>
+                                    <label for="name" class="form__label">Ваши имя и фамилия</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form__input" placeholder = "ivanov@email.com" id="email" required>
+                                    <label for="email" class="form__label">Ваш E-mail</label>
+                                    <div class="form-group-radio">
+                                        <input type="radio" class="form__input-radio" id="tour-1" name="checked">
+                                        <label for="tour-1" class="form__label-radio">
+                                            <span class="form__button-radio"></span>
+                                            Групповой тур
+                                        </label>
+                                    </div>
+                                    <div class="form-group-radio">
+                                        <input type="radio" class="form__input-radio" id="tour-2" name="checked">
+                                        <label for="tour-2" class="form__label-radio">
+                                            <span class="form__button-radio"></span>
+                                            Индивидуальный тур
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn_brown">Забронировать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+        <footer class="footer">
+            <div class="row text-align-center">
+                <a href="#">
+                    <img src="img/icons/Icon-logo.svg" alt="logo" class="footer__logo">
+                </a>
+            </div>
+            <div class="row">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">о нас</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">скидки</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">лучшие туры</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">калькулятор цены</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">связаться с нами</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
    

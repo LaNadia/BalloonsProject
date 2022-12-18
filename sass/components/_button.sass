@@ -1,5 +1,5 @@
 .btn
-    &:link, &:visited
+    &, &:link, &:visited
         @include style-link($color-grey) // вставка миксина
         background-color: $color-white
         position: relative
@@ -7,9 +7,10 @@
         border-radius: 5rem
         font-size: 2rem
         transition: all .3s
+        box-shadow: $box-shadow
+        border: none
     &:hover
         transform: translateY(-4px)
-        box-shadow: $box-shadow
         &::after
             opacity: 0
             transform: scaleX(1.5) scaleY(1.7)                
@@ -31,3 +32,10 @@
         animation: BtnToUp 1s ease-out .7s
         animation-fill-mode: backwards
         
+.btn_brown
+    &, &:link, &:visited
+        background: $color-brown-dark
+        color: $color-white
+    &:hover
+    &::after
+        background: $color-brown-dark

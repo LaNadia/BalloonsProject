@@ -63,6 +63,8 @@
 
 .container {
   background-color: #f7f7f7;
+  position: relative;
+  z-index: 0;
 }
 
 body {
@@ -114,7 +116,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1rem;
   font-weight: 800;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  background: linear-gradient(90deg, #BA8554, #A14F03);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -122,7 +124,7 @@ body {
   text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 .title-second_white {
-  color: white;
+  color: black;
 }
 
 .title-third {
@@ -139,7 +141,7 @@ body {
   font-weight: 400;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -150,10 +152,11 @@ body {
   border-radius: 5rem;
   font-size: 2rem;
   transition: all 0.3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 .btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 .btn:hover::after {
   opacity: 0;
@@ -178,6 +181,14 @@ body {
 .btn_animated {
   animation: BtnToUp 1s ease-out 0.7s;
   animation-fill-mode: backwards;
+}
+
+.btn_brown, .btn_brown:link, .btn_brown:visited {
+  background: #A14F03;
+  color: white;
+}
+.btn_brown::after {
+  background: #A14F03;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -360,6 +371,10 @@ body {
   margin: 0 auto;
   padding: 6rem;
   transform: skewX(330deg);
+  position: relative;
+}
+.feedback-card:not(:last-child) {
+  margin-bottom: 8rem;
 }
 .feedback-card > * {
   transform: skewX(-330deg);
@@ -377,10 +392,152 @@ body {
 }
 .feedback-card__img img {
   height: 100%;
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+.feedback-card__name {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.feedback-card:hover .feedback-card__name {
+  opacity: 1;
+}
+.feedback-card:hover img {
+  transform: scale(1);
+  filter: blur(0.3rem) brightness(80%);
 }
 
 .feedback-card__box {
   color: #777777;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.book {
+  height: 50rem;
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 57%, rgba(186, 133, 80, 0.8) 57%, rgba(161, 79, 3, 0.8) 100%), url("../img/bg_form.jpg") center/cover no-repeat;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.form {
+  font-size: 1.6rem;
+  width: 60%;
+  padding-top: 5rem;
+  padding-left: 5rem;
+}
+.form-group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form-group:nth-child(3) {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.form__input {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: black;
+  padding: 2rem 0 2rem 2rem;
+  background: white;
+  border: none;
+  border-bottom: 0.2rem solid transparent;
+  border-radius: 0.5rem;
+  width: 55%;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 0.2rem solid green;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.form__input:focus:invalid {
+  border-bottom: 0.2rem solid red;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-3rem);
+}
+.form__label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  display: block;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  transition: all 0.2s;
+}
+.form__input-radio {
+  display: none;
+}
+.form-group-radio {
+  width: 40%;
+  display: inline-block;
+  color: #777777;
+}
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.2rem;
+}
+.form__button-radio {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #A14F03;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #A14F03;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s all;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio:after {
+  opacity: 1;
 }
 
 .section-about {
@@ -390,7 +547,7 @@ body {
 
 .section-adventure {
   padding: 21rem 0;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../img/section-adventure.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7)), url("../img/section-adventure.jpg") center/cover no-repeat;
   transform: skewY(7deg);
 }
 .section-adventure > * {
@@ -399,11 +556,18 @@ body {
 
 .section-tour {
   padding-top: 15rem;
+  padding-bottom: 8rem;
 }
 
-.section_feedback {
+.section-feedback {
   padding-top: 8rem;
-  margin-bottom: 8rem;
+  padding-bottom: 8rem;
+  position: relative;
+}
+
+.section-book {
+  padding: 10rem;
+  background: linear-gradient(90deg, #BA8554, #A14F03);
 }
 
 .header {
@@ -474,6 +638,36 @@ body {
 }
 [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+}
+
+.footer {
+  padding: 8rem;
+  background: #333;
+}
+.footer__logo {
+  width: 12rem;
+}
+.footer__list {
+  list-style: none;
+  text-align: center;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  color: #777777;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  transition: 0.2s all;
+}
+.footer__link:hover {
+  color: #BA8554;
 }
 
 /*# sourceMappingURL=style.css.map */
