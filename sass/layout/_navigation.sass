@@ -1,0 +1,101 @@
+.navigation
+    &__background
+        z-index: 100
+        position: fixed
+        right: 8.5rem
+        top: 8.5rem
+        width:  6rem
+        height: 6rem
+        border-radius: 50%
+        background: radial-gradient($color-brown-light, $color-brown-dark)
+        // transform: scale(80)
+        transition: all .7s
+    &__button
+        background: $color-white
+        height: 7rem
+        width: 7rem
+        border-radius: 50%
+        position: fixed
+        top: 8rem
+        right: 8rem
+        z-index: 200
+        font-size: 3rem
+        cursor: pointer
+    &__nav
+        height: 100vh
+        position: fixed
+        top: 0
+        right: 0
+        z-index: 150
+        opacity: 0
+        width: 0
+        transition: all .3s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+    &__list
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        list-style: none
+        width: 100%
+        
+    &__item
+        text-align: center
+        &:not(:last-child)
+            margin-bottom: 5rem
+    &__link
+        &:link, &:visited
+            font-weight: 300
+            font-size: 4rem
+            line-height: 4.8rem
+            letter-spacing: .5rem
+            color: $color-white
+            text-decoration: none
+            padding: 1rem 2rem
+            // белый цвет в конце заполнит &__link за transition:.5s, но белого не видно тк сейчас background-size:230% 
+            background: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%)
+            background-size: 230% 
+            transition:  .5s all
+            display: inline-block //инлайн-блок даст transform: translateX(2rem) при hover
+        &:hover, &:active
+            // background-position закроет белым 100% текста, вместо 230% 
+            background-position: 100%
+            color: $color-brown-dark
+            transform: translateX(2rem)
+    &__toggle
+        display: none
+    &__toggle:checked ~ &__background
+            transform: scale(80)
+    &__toggle:checked ~ &__nav
+        width: 100%
+        opacity: 1
+    &__toggle:checked + &__button &__icon
+        background: transparent
+    &__toggle:checked + &__button &__icon::before
+        top:0
+        transform: rotate(135deg)
+    &__toggle:checked + &__button &__icon::after
+        top:0
+        transform: rotate(-135deg)
+    &__icon
+        position: relative
+        margin-top: 35px
+        margin-left: 21px
+        &,
+        &:before,
+        &::after
+            width: 30px
+            height: 2px
+            background: $color-black
+            display: inline-block
+            content: ''
+            position: absolute
+            left: 0
+            transition: all .2s
+        &::before
+            top: -8px
+        &::after
+            top: 8px
+    &__button:hover &__icon::before // наводим на button и влияем на before
+        top: -10px
+    &__button:hover &__icon::after // наводим на button и влияем на before
+        top: 10px
