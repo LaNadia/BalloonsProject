@@ -3,7 +3,7 @@
     perspective: 150rem
     -moz-perspective: 150rem
     position: relative
-    @include respond(tab-port)
+    @media only screen and (max-width: 900px), (hover:none) // media будет срабатывать если разрешение меньше 900px и нет возможности наводить
         height: auto
     &__side
         box-shadow: $box-shadow
@@ -18,18 +18,18 @@
         backface-visibility: hidden
         opacity: .99 // без этого свойства почему-то не работает backface-visibility и видно кнопку
         
-        @include respond(tab-port)
+        @media only screen and (max-width: 900px), (hover:none) // media будет срабатывать если разрешение меньше 900px и нет возможности наводить
             height: auto
             position: relative
         &_front
-            @include respond(tab-port)
+            @media only screen and (max-width: 900px), (hover:none) // media будет срабатывать если разрешение меньше 900px и нет возможности наводить
                 transform: rotateY(0deg)
                 padding-bottom: 10rem
         &_back
             transform: rotateY(180deg)
             background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
-            @include respond(tab-port)
-                transform: rotateY(0deg)
+            @media only screen and (max-width: 900px), (hover:none) // media будет срабатывать если разрешение меньше 900px и нет возможности наводить
+                transform: rotateY(0deg) 
                 padding: 5rem
                 padding-top: 12rem
                 margin-top: -10rem
@@ -98,7 +98,7 @@
         left: 50%
         transform: translate(-50%, -50%)
         color: $color-white
-        @include respond(tab-port)
+        @media only screen and (max-width: 900px), (hover:none) // media будет срабатывать если разрешение меньше 900px и нет возможности наводить
             position: relative
             top: 0%
             left: 0%
