@@ -3,6 +3,8 @@
     perspective: 150rem
     -moz-perspective: 150rem
     position: relative
+    @include respond(tab-port)
+        height: auto
     &__side
         box-shadow: $box-shadow
         height: 52rem
@@ -15,18 +17,36 @@
         overflow: hidden
         backface-visibility: hidden
         opacity: .99 // без этого свойства почему-то не работает backface-visibility и видно кнопку
+        
+        @include respond(tab-port)
+            height: auto
+            position: relative
+        &_front
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                padding-bottom: 10rem
         &_back
             transform: rotateY(180deg)
             background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                margin-top: -10rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
 
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
     &:hover &__side_back
         transform: rotateY(0deg)
     &__img
         background-blend-mode: hard-light
         height: 21rem
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        @include respond(tab-port)
+            height: 30rem
         &_1
             background: $color-brown-light url('../img/photos/tour-1.jpg') center / cover no-repeat
         &_2
@@ -43,15 +63,20 @@
         top: 17rem
         right: 0rem
         color: $color-white
+        @include respond(tab-port)
+            top: 20rem
+            font-size: 7rem
     &__span
         background: linear-gradient(90deg, $color-brown-light, $color-brown-dark)
         padding: 1rem 2rem .3rem 2rem
         &_2
             position: absolute
-            top: 3.5rem
+            top: 3rem
             right: 0
             padding-bottom: 1rem
             padding-top: 0
+            @include respond(tab-port)
+                top: 7.4rem
     &__description
         ul
             list-style: none
@@ -64,13 +89,21 @@
                 line-height: 1.4rem
                 text-decoration-line: underline
                 text-align: center
-                margin-bottom: 2rem           
+                margin-bottom: 2rem
+                @include respond(tab-port)
+                    font-size: 2rem         
     &__backside
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
         color: $color-white
+        @include respond(tab-port)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
     &_text
         margin-bottom: 8rem
         letter-spacing: .2rem
